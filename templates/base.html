@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load staticfiles%}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,18 +16,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand mynav" href="{% url 'home'%}}">Leo chat</a>
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Leo chat</a>
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="navbar-nav">
                 {% if user.is_authenticated%}
-                    <li><a href="#">POST</a></li>
-                    <li><a href="#">GROUP</a></li>
-                    <li><a href="#">CREATE POST</a></li>
-                    <li><a href="{% url 'accounts:logout'%}">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">POST</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">GROUP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CREATE POST</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout'%}">Log Out</a></li>
                 {% else %}
-                    <li><a href="#">POST</a></li>
-                    <li><a href="{% url 'accounts:login'%}">Log In</a></li>
-                    <li><a href="{% url 'accounts:signup'%}">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">POST</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login'%}">Log In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup'%}">Sign Up</a></li>
                 {% endif %}
             </ul>
         </div>
