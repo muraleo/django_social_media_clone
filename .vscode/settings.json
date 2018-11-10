@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/leo/miniconda3/envs/myEnv/bin/python"
+    "python.pythonPath": "/Users/leo/miniconda3/envs/myEnv/bin/python",
+    "python.linting.pylintEnabled": false
 }

@@ -1,6 +1,6 @@
-{% extends "posts/post_base.html%}
+{% extends "posts/post_base.html" %}
 
-{% block pre_post_content%}
+{% block pre_post %}
 <div class="col-md-4">
     {% if request.user.id_authenticated %}
     <div class="card card-with-shadow">
@@ -15,15 +15,16 @@
             </ul>
         </div>
     </div>
-    {%  endif %}
+    {% endif %}
     <div class="card card-with-shadow">
         <div class="content">
             <h5 class="title">All Groups</h5>
             <ul class="list-unstyled">
                 {% for other_group in get_other_group %}
                 <li class='group li-with-bullet'>
-                    <a href="{% url 'groups:single' slug=other_group.slug%}"></a>
+                    <a href="{% url 'groups:single' slug='other_group.slug'%}"></a>
                 </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -34,6 +35,6 @@
 <div class="col-md-8">
     {% for post in post_list %}
         {% include "posts/_post.html" %}
-    {% endfor }
+    {% endfor %}
 </div>
 {% endblock %}

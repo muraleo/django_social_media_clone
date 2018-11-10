@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles%}
+{% load staticfiles %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +20,12 @@
 
             <ul class="navbar-nav">
                 {% if user.is_authenticated%}
-                    <li class="nav-item"><a class="nav-link" href="#">POST</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">GROUP</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">CREATE POST</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'posts:create' %}">POST</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'groups:all' %}">GROUP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'groups:create' %}">CREATE GROUP</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout'%}">Log Out</a></li>
                 {% else %}
-                    <li class="nav-item"><a class="nav-link" href="#">POST</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'posts:all' %}">POST</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login'%}">Log In</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'accounts:signup'%}">Sign Up</a></li>
                 {% endif %}
